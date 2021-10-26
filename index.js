@@ -1,11 +1,27 @@
 const data = require("./data.json");
+const hexColors = require("./hexColors.json");
 
-let dairy = [];
-let excitement = [];
+let clothingColors = [];
 
 for (let i = 0; i < data.length; i++) {
-  dairy.push(data[i]["favourite-dairy-product"]);
-  excitement.push(data[i]["excitement-for-tech-track"]);
+  clothingColors.push(commaSeperatedStringToArray(data[i]["clothing-colors"]));
+}
+
+// Merge the cloting colors array.
+let mergedClothingColors = [].concat.apply([], clothingColors);
+
+// Retrieve the hex colors.
+let clothingHexColors = clothingColors.map(getHexColors);
+
+function commaSeperatedStringToArray(string) {
+  // Replace whitespace using Regex.
+  string = string.replace(/\s+/g, "");
+  return string.split(",");
+}
+
+// Retrieves the hex colors.
+function getHexColors(colors) {
+  return colors.map((color) => hexColors[color]);
 }
 
 // Retrieves the distribution of strings and numbers in an array.
@@ -20,6 +36,8 @@ function distribution(data) {
   return object;
 }
 
+console.log(distribution(mergedClothingColors));
+
 // Retrieves the distribution of strings and numbers in an array in percentages.
 function percentage(object) {
   let totalAnswers = 0;
@@ -33,5 +51,4 @@ function percentage(object) {
   return object;
 }
 
-console.log(distribution(dairy));
-console.log(percentage(distribution(dairy)));
+console.log(percentage(distribution(mergedClothingColors)));
