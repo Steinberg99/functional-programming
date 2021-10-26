@@ -1,0 +1,19 @@
+{
+  "name": "functional-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Hallo wereld!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Steinberg99/functional-programming.git"
+  },
+  "author": "Stein Bergervoet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Steinberg99/functional-programming/issues"
+  },
+  "homepage": "https://github.com/Steinberg99/functional-programming#readme"
+}
