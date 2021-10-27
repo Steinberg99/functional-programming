@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+@import url('https://use.typekit.net/isz3slv.css');
+
+*,
+html {
+  font-family: 'Zen Antique', serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+p {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1em 0 1em 0;
+  width: 50%;
+}
+
+#introText {
+  padding: 2em 0 1.5em 0;
+}
+
+span {
+  font-family: courier-std, monospace;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  background-color: #f6f8fa;
+}
+
+#questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#questions li {
+  list-style-type: disc;
+}
+
+#questions li + li {
+  padding: 0.125em 0 0.5em 0;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 1.5em;
+  width: 50%;
+}
+
+.sectionHeader {
+  padding-top: 1.5em;
+}
+
+#clothingColors {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#clothingColors li {
+  width: 10em;
+  height: 10em;
+  margin: 0.5em;
+  border: 0.125em solid black;
+}
+
+#thirdHeader {
+  padding-top: 2.5rem;
+}
+
+h3 {
+  font-size: 3em;
+  text-align: center;
+}
+
+#distributionList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#distributionList li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 10em;
+  height: 10em;
+  border: 0.125em solid black;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+#distributionList li p {
+  margin: 0 auto;
+  padding: 0 0 0.625em 0;
+}
