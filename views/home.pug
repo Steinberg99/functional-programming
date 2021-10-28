@@ -13,36 +13,36 @@ html(lang="en")
                 h1 Mijn klas in kleur!
                 p(id="introText") Op 25 oktober 2021 ben ik samen met mijn klas begonnen aan de 
                     span Tech Track
-                    |, het technische onderdeel van het themasemester Information Design. Op de eerste dag werd er aan ons gevraagd om een enquête in te vullen. Uit deze enquête heb ik de volgende vragen gevisualiseerd. 
+                    |, het technische onderdeel van het themasemester Information Design. Op de eerste dag werd er aan ons gevraagd om een enquête in te vullen. Uit deze enquête heb ik de volgende vraag gevisualiseerd. 
                 ul(id="questions")
                     li Welke kleur kledingstukken heb je aan vandaag?
-                    li Wat is je oogkleur?
-                p Deze website is volledig geproduceerd in het tijdsspanne van één week door 
-                    a(href="https://steinbergervoet.nl", target="_blank") Stein Bergervoet
-                    |. De code van deze website is te vinden op 
-                    a(href="https://github.com/Steinberg99/functional-programming/", target="_blank") GitHub
-                    |.
             section 
                 h2 Welke kleuren kleding werden er in mijn klas gedragen op 25 oktober 2021?
                 p(class="sectionHeader") Elk vierkantje representeert in deze visualisatie één klasgenoot.
                 ul(id="clothingColors")
-                    each element in colorGradients  
-                        li(style=`background: ${element}`)
+                    each gradient in colorGradients  
+                        li(style=`background: ${gradient}`)
             section 
                 h2(id="thirdHeader") Welke kleuren werden er het meest gedragen? 
-                p(class="sectionHeader") De distributie van de kleuren van de kleren wordt hier weergegeven.
+                p(class="sectionHeader", id="classmateHeader") De distributie van de kleuren wordt hier met vakjes weergegeven. Elk vakje representeert hier één gekozen kleur. 
                 ul(id="distributionList") 
-                    each val, key in colorDistribution
-                        if key=="Wit"
-                            li(style=`background: black;`)
-                                h3(style=`color: ${getHexColor(key)};`)=val 
-                                p(style="color: white;")=key
+                    each color in sortedClothingHexColors
+                        li(style=`background: ${color};`)
+                p(class="sectionHeader", id="percentagesText") En nu in percentages.
+                ul(id="percentagesList")    
+                    each val, key in sortedColorPercentages 
+                        if key=="Zwart" || key=="Blauw" || key=="Paars"
+                            li(style=`background: ${getHexColor(key)};`)
+                                p(style=`color: white;`)=`${val}%`
                         else 
-                            li 
-                                h3(style=`color: ${getHexColor(key)};`)=val 
-                                p=key
-                p(class="sectionHeader") En nu nog een keer in procenten.
-            footer 
+                            li(style=`background: ${getHexColor(key)}`)
+                                p=`${val}%`
+                p(id="endingText") Deze website is volledig geproduceerd in het tijdsspanne van één week door 
+                    a(href="https://steinbergervoet.nl", target="_blank") Stein Bergervoet
+                    |. De code van deze website is te vinden op 
+                    a(href="https://github.com/Steinberg99/functional-programming/", target="_blank") GitHub
+                    |.
+            footer  
                 nav 
                     a(href="") Portfolio
                     a(href="") GitHub

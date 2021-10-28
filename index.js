@@ -13,13 +13,17 @@ let mergedClothingColors = [];
 let clothingHexColors = [];
 let colorDistribution;
 let colorPercentages;
+let sortedColorDistribution;
+let sortedColorPercentages;
+let sortedClothingHexColors = [];
 let colorGradients = [];
 
 // Render the homepage.
 app.get('/', (req, res) => {
   res.render('home', {
     colorGradients: colorGradients,
-    colorDistribution: colorDistribution,
+    sortedClothingHexColors: sortedClothingHexColors,
+    sortedColorPercentages: sortedColorPercentages,
     getHexColor: getHexColor
   });
 });
@@ -34,12 +38,30 @@ function main() {
   }
   // Merge the cloting colors array.
   mergedClothingColors = [].concat.apply([], clothingColors);
+
   // Retrieve the hex colors codes.
   clothingHexColors = clothingColors.map(getHexColors);
+
   // Retrieve the distribution of colors.
   colorDistribution = distribution(mergedClothingColors);
+
   // Retrieve the color percentages based on the distribution of colors.
   colorPercentages = percentage(colorDistribution);
+
+  // Sort the color distribution object.
+  sortedColorDistribution = sortObject(colorDistribution);
+
+  console.log(sortedColorDistribution);
+
+  // Sort the color percentages object.
+  sortedColorPercentages = sortObject(colorPercentages);
+
+  Object.keys(sortedColorDistribution).forEach(key => {
+    for (let i = 0; i < sortedColorDistribution[key]; i++) {
+      sortedClothingHexColors.push(getHexColor(key));
+    }
+  });
+
   // Retrieve the css gradient strings.
   for (let i = 0; i < clothingHexColors.length; i++) {
     colorGradients.push(gradient(clothingHexColors[i]));
@@ -86,11 +108,12 @@ function percentage(object) {
   return object;
 }
 
-// Retrieves the css gradient strings based on the hex color codes.
+// Retrieves the CSS gradient based on the provided hex color codes.
 function gradient(colors) {
   if (colors[1]) {
     let gradient = 'linear-gradient(to right,';
     for (let i = 0; i < colors.length - 1; i++) {
+      // To create the desired effect the color needs to be repeated twice.
       gradient += ` ${colors[i]} ${(100 / (colors.length - 1)) * i}%,`;
       gradient += ` ${colors[i]} ${(100 / (colors.length - 1)) * (i + 1)}%,`;
     }
@@ -102,7 +125,24 @@ function gradient(colors) {
     }%)`;
     return gradient;
   }
+  // If the array of colors only contains one color this color gets returned.
   return colors[0];
+}
+
+// Sort object based on numeric values.
+function sortObject(object) {
+  var array = [];
+  for (let key in object) {
+    array.push([key, object[key]]);
+  }
+  array.sort(function (a, b) {
+    return b[1] - a[1];
+  });
+  let sortedObject = {};
+  array.forEach(item => {
+    sortedObject[item[0]] = item[1];
+  });
+  return sortedObject;
 }
 
 main();
