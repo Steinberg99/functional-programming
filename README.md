@@ -2,13 +2,15 @@
 
 ## Introduction
 
-Hello and welcome to my repository for the two week course functional-programming! Here you can find the website I produced during the first week of this course.
+Hi! Welcome to my repository for the two week course functional-programming! Here you can find the website I produced during the first week of this course.
 
 We were tasked to write functions that could parse some data into a more suitable form. These functions had to adhere to the functional programming paradigm. The data we had to use was gathered by a questionnaire that me and my classmates had to complete on the first day of the course. This questionnaire contained the following question.
 
 - What color garments are you wearing today?
 
 I used the answers to this question to create my visualizations. Feel free to clone this repository and take a look!
+
+> **NOTE** The content on this website is completely written in Dutch!
 
 ![Homescreen](./images/home.png)
 
