@@ -5,45 +5,49 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         style 
-            include ../style.css
+            include ../styles/styles.css
         title Mijn klas in kleur!
     body 
         main 
-            section 
+            section(id="sectionOne")
                 h1 Mijn klas in kleur!
-                p(id="introText") Op 25 oktober 2021 ben ik samen met mijn klas begonnen aan de 
+                p Op 25 oktober 2021 ben ik samen met mijn klas begonnen aan de 
                     span Tech Track
                     |, het technische onderdeel van het themasemester Information Design. Op de eerste dag werd er aan ons gevraagd om een enquête in te vullen. Uit deze enquête heb ik de volgende vraag gevisualiseerd. 
-                ul(id="questions")
+                ul
                     li Welke kleur kledingstukken heb je aan vandaag?
-            section 
+            section(id="sectionTwo")
                 h2 Welke kleuren kleding werden er in mijn klas gedragen op 25 oktober 2021?
-                p(class="sectionHeader") Elk vierkantje representeert in deze visualisatie één klasgenoot.
-                ul(id="clothingColors")
-                    each gradient in colorGradients  
+                p Elk vierkantje representeert in deze visualisatie één klasgenoot.
+                ul
+                    each gradient in gradients  
                         li(style=`background: ${gradient}`)
-            section 
-                h2(id="thirdHeader") Welke kleuren werden er het meest gedragen? 
-                p(class="sectionHeader", id="classmateHeader") De distributie van de kleuren wordt hier met vakjes weergegeven. Elk vakje representeert hier één gekozen kleur. 
-                ul(id="distributionList") 
-                    each color in sortedClothingHexColors
+            section(id="sectionThree")
+                h2 Welke kleuren werden er het meest gedragen? 
+                p De distributie van de kleuren wordt hier met vakjes weergegeven. Elk vakje representeert hier één gekozen kleur. 
+                ul
+                    each color in sortedHexColors
                         li(style=`background: ${color};`)
-                p(class="sectionHeader", id="percentagesText") En nu in percentages.
-                ul(id="percentagesList")    
+                p En nu in percentages.
+                ul
                     each val, key in sortedColorPercentages 
                         if key=="Zwart" || key=="Blauw" || key=="Paars"
-                            li(style=`background: ${getHexColor(key)};`)
+                            li(style=`background: ${hexColor(key)};`)
                                 p(style=`color: white;`)=`${val}%`
                         else 
-                            li(style=`background: ${getHexColor(key)}`)
+                            li(style=`background: ${hexColor(key)}`)
                                 p=`${val}%`
-                p(id="endingText") Deze website is volledig geproduceerd in het tijdsspanne van één week door 
+                p Deze website is volledig geproduceerd in het tijdsspanne van één week door 
                     a(href="https://steinbergervoet.nl", target="_blank") Stein Bergervoet
                     |. De code van deze website is te vinden op 
                     a(href="https://github.com/Steinberg99/functional-programming/", target="_blank") GitHub
                     |.
             footer  
                 nav 
-                    a(href="") Portfolio
-                    a(href="") GitHub
-                    a(href="") LinkedIn 
+                    ul
+                        li 
+                            a(href="") Portfolio
+                        li
+                            a(href="") GitHub
+                        li
+                            a(href="") LinkedIn 

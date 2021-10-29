@@ -3,12 +3,12 @@
 
 *,
 html {
+  box-sizing: border-box;
   font-family: 'Zen Antique', serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
   list-style-type: none;
-  box-sizing: border-box;
 }
 
 h1 {
@@ -19,13 +19,9 @@ h1 {
 
 p {
   text-align: center;
+  width: 50%;
   margin: 0 auto;
   padding: 1em 0 1em 0;
-  width: 50%;
-}
-
-#introText {
-  padding: 2em 0 1.5em 0;
 }
 
 span {
@@ -35,37 +31,31 @@ span {
   background-color: #f6f8fa;
 }
 
-#questions {
+#sectionOne ul {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#questions li {
+#sectionOne ul li {
   list-style-type: disc;
-}
-
-#questions li + li {
-  padding: 0.125em 0 0.5em 0;
 }
 
 h2 {
   font-size: 2em;
   text-align: center;
+  width: 50%;
   margin: 0 auto;
   padding-top: 1.5em;
-  width: 50%;
 }
 
-.sectionHeader {
+#sectionTwo p,
+#sectionThree p {
   padding-top: 1.5em;
 }
 
-#classmateHeader {
-  padding-bottom: 20px;
-}
-
-#clothingColors {
+#sectionTwo ul,
+#sectionThree ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -73,87 +63,46 @@ h2 {
   margin: 0 auto;
 }
 
-#clothingColors li {
+#sectionTwo ul {
+  gap: 1em;
+}
+
+#sectionThree ul {
+  gap: 0.5em;
+}
+
+#sectionTwo ul li {
   width: 10em;
   height: 10em;
-  margin: 0.5em;
   border: 0.125em solid black;
 }
 
-#thirdHeader {
-  padding-top: 3.5rem;
-}
-
-h3 {
-  font-size: 3em;
-  text-align: center;
-}
-
-#distributionList {
+#sectionThree ul li {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  width: 50%;
-  margin: 0 auto;
-}
-
-#distributionList li {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 5em;
   height: 5em;
   border: 0.125em solid black;
-  margin: 0.25em;
 }
 
-#distributionList li p {
-  margin: 0 auto;
-  padding: 0 0 0.75em 0;
-}
-
-#percentagesText {
-  padding: 20px 0 20px 0;
-}
-
-#percentagesList {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 50%;
-  margin: 0 auto;
-}
-
-#percentagesList li {
-  display: flex;
-  align-items: center;
-  width: 5em;
-  height: 5em;
-  border: 0.125em solid black;
-  margin: 0.25em;
-}
-
-#percentagesList li p {
-  font-size: 1.5em;
+#sectionThree ul li p {
   text-align: center;
+  font-size: 1.5em;
   width: 100%;
   margin: 0;
   padding: 0 0 1px 0;
-}
-
-#endingText {
-  padding: 20px 0 0 0;
 }
 
 footer {
   padding: 4em;
 }
 
-footer nav {
+footer nav ul {
   display: flex;
   justify-content: center;
 }
 
-footer nav a + a {
+footer nav ul li + li {
   padding-left: 1em;
 }
