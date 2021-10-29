@@ -42,7 +42,7 @@ function main() {
     gradients.push(gradient(hexColorArrays[i]));
   }
 
-  // Create the color distribution and the color percentages.
+  // Create the color distribution and the color percentages based on the color arrays.
   colorDistribution = distribution([].concat.apply([], colorArrays));
   colorPercentages = percentages(colorDistribution);
 
@@ -55,6 +55,7 @@ function main() {
   sortedHexColors = sortedColors.map(color => hexColor(color));
 }
 
+// Run the main function when the server starts.
 main();
 
 // Render the homepage.
