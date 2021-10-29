@@ -98,11 +98,6 @@ footer {
   padding: 4em;
 }
 
-footer nav ul {
-  display: flex;
-  justify-content: center;
-}
-
-footer nav ul li + li {
-  padding-left: 1em;
+footer p {
+  padding: 0;
 }

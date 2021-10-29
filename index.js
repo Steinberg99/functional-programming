@@ -53,7 +53,6 @@ function main() {
   // Turn the sorted color distribution object into an array of hex colors.
   sortedColors = sortedObjectToArray(sortObject(colorDistribution));
   sortedHexColors = sortedColors.map(color => hexColor(color));
-  console.log(sortedHexColors);
 }
 
 main();
