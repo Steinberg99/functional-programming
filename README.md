@@ -10,7 +10,7 @@ We were tasked to write functions that could parse some data into a more suitabl
 
 I used the answers to this question to create my visualizations. Feel free to clone this repository and take a look!
 
-> **NOTE** The content on this website is completely written in Dutch!
+> **NOTE:** The content on this website is completely written in Dutch!
 
 ![Homescreen](./images/home.png)
 
