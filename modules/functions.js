@@ -1,3 +1,5 @@
+/* Week one. */
+
 const hexColorData = require('../data/hexColorData.json');
 
 // Seperates a comma separated string into an array of strings.
@@ -98,3 +100,5 @@ module.exports = {
   sortedObjectToArray: sortedObjectToArray,
   gradient: gradient
 };
+
+/* Week two */

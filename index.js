@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 4200;
-const data = require('./data/data.json');
+const data = require("./data/data.json");
 const {
   commaSeperatedStringToArray,
   hexColor,
@@ -11,9 +11,9 @@ const {
   sortObject,
   sortedObjectToArray,
   gradient
-} = require('./modules/functions.js');
+} = require("./modules/functions.js");
 
-app.set('view engine', 'pug');
+app.set("view engine", "pug");
 app.use(express.urlencoded({ extended: true }));
 
 let colorArrays = [];
@@ -33,7 +33,7 @@ let sortedHexColors;
 function main() {
   // Create the color arrays and turn them into hex color arrays.
   for (let i = 0; i < data.length; i++) {
-    colorArrays.push(commaSeperatedStringToArray(data[i]['clothing-colors']));
+    colorArrays.push(commaSeperatedStringToArray(data[i]["clothing-colors"]));
   }
   hexColorArrays = colorArrays.map(array => hexColorArray(array));
 
@@ -59,8 +59,8 @@ function main() {
 main();
 
 // Render the homepage.
-app.get('/', (req, res) => {
-  res.render('home', {
+app.get("/", (req, res) => {
+  res.render("home", {
     gradients: gradients,
     sortedHexColors: sortedHexColors,
     sortedColorPercentages: sortedColorPercentages,

@@ -1,6 +1,7 @@
 {
   "name": "functional-programming",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/Steinberg99/functional-programming#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "node-fetch": "^3.0.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
