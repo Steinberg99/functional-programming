@@ -16,22 +16,22 @@ const {
 app.set("view engine", "pug");
 app.use(express.urlencoded({ extended: true }));
 
-let colorArrays = [];
-let hexColorArrays = [];
+let colorArrays = []; // Array of arrays of color strings. [["Red", "Green"], ["Blue"]]
+let hexColorArrays = []; // Array of arrays of hex colors. [["FF0000", "00FF00"], ["0000FF"]]
 
-let gradients = [];
+let gradients = []; // Array of CSS gradient strings.
 
-let colorDistribution;
-let colorPercentages;
+let colorDistribution; // Object that contains the distribution of selected colors.
+let colorPercentages; // Object that containts the distribution transformed into percententages.
 
-let sortedColorDistribution;
-let sortedColorPercentages;
+let sortedColorDistribution; // Sorted distribution object from most to least frequent.
+let sortedColorPercentages; // Sorted percentages object from most to least frequent.
 
-let sortedColors;
-let sortedHexColors;
+let sortedColors; // Array of the sorted color string from most to least frequent.
+let sortedHexColors; // Array of the sorted hex colors from most to least frequent.
 
 function main() {
-  // Create the color arrays and turn them into hex color arrays.
+  // Create the color string arrays and turn them into hex color arrays.
   for (let i = 0; i < data.length; i++) {
     colorArrays.push(commaSeperatedStringToArray(data[i]["clothing-colors"]));
   }
@@ -61,6 +61,7 @@ main();
 // Render the homepage.
 app.get("/", (req, res) => {
   res.render("home", {
+    // Provide the the required variables to the template.
     gradients: gradients,
     sortedHexColors: sortedHexColors,
     sortedColorPercentages: sortedColorPercentages,
