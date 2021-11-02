@@ -1,12 +1,12 @@
 /* Week one. */
 
-const hexColorData = require('../data/hexColorData.json');
+const hexColorData = require("../data/hexColorData.json");
 
 // Seperates a comma separated string into an array of strings.
 function commaSeperatedStringToArray(string) {
   // Replace whitespace using Regex.
-  string = string.replace(/\s+/g, '');
-  return string.split(',');
+  string = string.replace(/\s+/g, "");
+  return string.split(",");
 }
 
 // Turns a string into a hex color.
@@ -75,7 +75,7 @@ function sortedObjectToArray(object) {
 // Creates a CSS gradient based on an array of hex colors.
 function gradient(colorArray) {
   let interval = 100 / (colorArray.length - 1);
-  let string = 'linear-gradient(to right,';
+  let string = "linear-gradient(to right,";
   // If the array contains more then one color, create the gradient.
   if (colorArray[1]) {
     for (let i = 0; i < colorArray.length; i++) {
@@ -83,7 +83,7 @@ function gradient(colorArray) {
       string += ` ${colorArray[i]} ${interval * i}%,`;
       string += ` ${colorArray[i]} ${interval * (i + 1)}%,`;
     }
-    string = string.slice(0, -1) + ')';
+    string = string.slice(0, -1) + ")";
     return string;
   }
   // If the array of colors only contains one color return this color.
@@ -100,5 +100,3 @@ module.exports = {
   sortedObjectToArray: sortedObjectToArray,
   gradient: gradient
 };
-
-/* Week two */
