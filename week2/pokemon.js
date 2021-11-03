@@ -47,8 +47,8 @@ function cleanPokemonData(data) {
       types: typesToArray(pokemon.types), // Turn the types to an array of types.
       weight: pokemon.weight,
       height: pokemon.height,
-      image_url: pokemon.front_default,
-      moves: movesToArray(pokemon.moves) // Turn the moves into an array of moves.
+      image_url: pokemon.sprites.front_default
+      // moves: movesToArray(pokemon.moves)
     });
   });
   return cleanedPokemonData;
