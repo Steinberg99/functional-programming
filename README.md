@@ -24,6 +24,8 @@ The code for my implementation of the Star Wars API can be found in the [`week2o
 
 ## 🧑‍💻 How to install
 
+### Week 1
+
 > **NOTE:** Before you can install this project be sure to have both [Node.js](https://nodejs.org/en/download/) and NPM installed. NPM should automatically be installed when installing Node.js.
 
 You can install my project locally by running the following command in your local folder.
@@ -31,6 +33,19 @@ You can install my project locally by running the following command in your loca
 - `git clone https://github.com/Steinberg99/functional-programming`
 
 When you have cloned my repository run the command `npm install` to install all of the project dependencies. Run this command in the local folder where you cloned my project. When you have done this you can run the command `npm start` to start the project. The website should run in the browser when visiting `localhost:4200`.
+
+### Week 2
+
+To run my implementations of the Star Wars API and the PokeAPI you navigate to their aforementioned folders in the console. Before you can run these implementations using Node.js you need to add the following line somewhere into the `package.json` file.
+
+`"type": "module",`
+
+Doing this is required because node-fetch can only be imported with the `import` statement instead of the `require()` function. Once this line has been added the files can be run using the following command in the corresponding folder.
+
+- `node swapi.js` in the `week2old` folder to run my implementation of the Star Wars API.
+- `node pokemon.js` in the `week2` folder to run my implementation of the PokéAPI.
+
+The results of these scripts should be logged to the console.
 
 ## 💻 Technologies
 
