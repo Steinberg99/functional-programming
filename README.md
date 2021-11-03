@@ -58,7 +58,7 @@ The results of these scripts should be logged to the console. The following obje
         climate: 'arid',
         terrain: 'desert'
     }
-  }
+}
 ```
 
 ```javascript
