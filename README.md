@@ -45,7 +45,17 @@ Doing this is required because node-fetch can only be imported with the `import`
 - `node swapi.js` in the `week2old` folder to run my implementation of the Star Wars API.
 - `node pokemon.js` in the `week2` folder to run my implementation of the PokéAPI.
 
-The results of these scripts should be logged to the console.
+The results of these scripts should be logged to the console. The following object is an example of the expected outcome.
+
+```javascript
+{
+    name: 'Bulbasaur',
+    types: [ 'grass', 'poison' ],
+    weight: 69,
+    height: 7,
+    image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
+}
+```
 
 ## 💻 Technologies
 
