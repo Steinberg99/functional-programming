@@ -1,3 +1,5 @@
+/* Week 2 */
+
 import fetch from "node-fetch";
 import {
   firstLetterToUpperCase,
@@ -11,7 +13,6 @@ const url = `https://pokeapi.co/api/v2/${topic}/`;
 async function main() {
   const pokemonData = cleanPokemonData(await fetchPokemonData(9)); // Clean the fetched pokemon data.
   console.log(pokemonData); // Log the data to the console.
-  console.log(pokemonData[0].moves);
 }
 
 // Recieve the pokemon data based on the provided amount.
@@ -47,10 +48,11 @@ function cleanPokemonData(data) {
       weight: pokemon.weight,
       height: pokemon.height,
       image_url: pokemon.front_default,
-      moves: movesToArray(pokemon.moves)
+      moves: movesToArray(pokemon.moves) // Turn the moves into an array of moves.
     });
   });
   return cleanedPokemonData;
 }
 
+// Run the main function.
 main();

@@ -39,6 +39,7 @@ function percentages(object) {
   Object.keys(object).forEach(key => {
     totalAnswers += object[key];
   });
+  // Calculate the percentage for each key.
   Object.keys(object).forEach(key => {
     object[key] = Math.round((object[key] / totalAnswers) * 100);
   });
@@ -52,11 +53,12 @@ function sortObject(object) {
     array.push([key, object[key]]);
   }
   array.sort(function (a, b) {
-    return b[1] - a[1];
+    // Sort the key and value arrays based on the value.
+    return b[1] - a[1]; // Sort b over a so the arrays will be sorted into a descending order.
   });
   let sortedObject = {};
   array.forEach(item => {
-    sortedObject[item[0]] = item[1];
+    sortedObject[item[0]] = item[1]; // Recreate the object based on the values in descending order.
   });
   return sortedObject;
 }
@@ -66,7 +68,7 @@ function sortedObjectToArray(object) {
   let array = [];
   Object.keys(object).forEach(key => {
     for (let i = 0; i < object[key]; i++) {
-      array.push(key);
+      array.push(key); // Push the key into the array x amount of times based on the corresponding value.
     }
   });
   return array;
@@ -90,6 +92,7 @@ function gradient(colorArray) {
   return colorArray[0];
 }
 
+// Export the functions.
 module.exports = {
   commaSeperatedStringToArray: commaSeperatedStringToArray,
   hexColor: hexColor,
