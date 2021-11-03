@@ -1,6 +1,8 @@
 # functional-programming
 
-## Introduction
+## 📋 Introduction
+
+### 🟥 Week 1
 
 Hi! Welcome to my repository for the two week course functional-programming! Here you can find the website I produced during the first week of this course.
 
@@ -14,7 +16,13 @@ I used the answers to this question to create my visualizations. Feel free to cl
 
 ![Homescreen](./images/home.png)
 
-## How to install
+### 💾 Week 2
+
+During the second week of this course I was tasked to fetch and clean some data from an external API. I decided to use the [Star Wars API](https://swapi.dev/) and the [PokéAPI](https://pokeapi.co/) for this assignment. To first get a deeper understanding of using the fetch API I challenged myself to not use the `await` and `async` keywords in my implementation of the Star Wars API. To practice these keywords I did use them in my implentation of the PokéAPI.
+
+The code for my implementation of the Star Wars API can be found in the [`week2old` folder](https://github.com/Steinberg99/functional-programming/tree/main/week2old). My implementation of the PokéAPI is located in the [`week2` folder](https://github.com/Steinberg99/functional-programming/tree/main/week2) of this repository.
+
+## 🧑‍💻 How to install
 
 > **NOTE:** Before you can install this project be sure to have both [Node.js](https://nodejs.org/en/download/) and NPM installed. NPM should automatically be installed when installing Node.js.
 
@@ -24,14 +32,17 @@ You can install my project locally by running the following command in your loca
 
 When you have cloned my repository run the command `npm install` to install all of the project dependencies. Run this command in the local folder where you cloned my project. When you have done this you can run the command `npm start` to start the project. The website should run in the browser when visiting `localhost:4200`.
 
-## Technologies
+## 💻 Technologies
 
-This project makes use of the following technologies.
+During this project I made use of the following technologies or libraries.
 
 - [Node.js](https://nodejs.org/en/download/),
 - [Express](https://expressjs.com/),
-- [Pug](https://pugjs.org/api/getting-started.html)
+- [Pug](https://pugjs.org/api/getting-started.html),
+- [Node Fetch](https://www.npmjs.com/package/node-fetch)
 
-## License
+## ✍️ Author and license
 
-MIT License
+Author: [Stein Bergervoet](https://github.com/Steinberg99/), license: [MIT License](https://github.com/Steinberg99/functional-programming/blob/main/LICENSE).
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
