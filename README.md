@@ -1,6 +1,6 @@
 # functional-programming
 
-## 📋 Introduction
+## 📋 My concepts
 
 ### 🟥 Week 1
 
